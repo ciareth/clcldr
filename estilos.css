@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Asegura un margen en dispositivos pequeños */
+}
+
+.calculator {
+    width: 100%;
+    max-width: 300px; /* Ajusta el ancho máximo */
+    background-color: #ffffff;
+    padding: 20px; /* Aumenta el padding alrededor del contenido */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.calculator:hover {
+    transform: translateY(-5px);
+}
+
+#display {
+    width: 100%;
+    height: 60px; /* Ajusta la altura del cuadro de resultado */
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 12px;
+    text-align: right;
+    font-size: 1.8rem; /* Reduce el tamaño de la fuente */
+    padding: 10px 15px; /* Ajusta el padding */
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px; /* Agrega margen inferior para separar del área de botones */
+}
+
+/* Ajusta el diseño del contenedor de los botones */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Reduce el espacio entre los botones */
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #1e90ff;
+    color: #ffffff;
+    font-size: 1.3rem; /* Ajusta el tamaño de la fuente de los botones */
+    border: none;
+    border-radius: 12px;
+    padding: 15px; /* Ajusta el padding */
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a71d1;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:nth-child(4), /* Division */
+button:nth-child(8), /* Multiplication */
+button:nth-child(12), /* Subtraction */
+button:nth-child(16), /* Addition */
+button:nth-child(15) /* Equals */
+{
+    background-color: #ff6347;
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.3);
+}
+
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover,
+button:nth-child(15):hover {
+    background-color: #e5533d;
+}
+
+button:nth-child(15) { /* Equals Button */
+    background-color: #32cd32;
+    box-shadow: 0 6px 20px rgba(50, 205, 50, 0.3);
+}
+
+button:nth-child(15):hover {
+    background-color: #28a428;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+    #display {
+        font-size: 1.6rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        padding: 8px 12px;
+    }
+
+    button {
+        padding: 12px; /* Botones más pequeños en móviles */
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        gap: 8px; /* Espacio más pequeño entre botones */
+    }
+
+    .calculator {
+        padding: 15px; /* Ajuste de padding en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #display {
+        font-size: 1.8rem; /* Tamaño de fuente intermedio */
+        padding: 10px 14px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        gap: 10px; /* Ajuste de espacio en tabletas */
+    }
+}
+
+
+
